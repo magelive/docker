@@ -1,0 +1,31 @@
+#GitBlog配置文件，使用4个空格代替Tab
+---
+url: /
+title: Docker-build GitBlog
+subtitle: GitBlog in Docker
+theme: default
+enableCache: true
+highlight: true
+mathjax: true
+katex: true
+duoshuo:
+baiduAnalytics:
+keywords: GitBlog,博客,Markdown博客,Docker
+description: >
+    GitBlog是一个简单易用的Markdown博客系统
+version: 2.2
+author:
+    name: Magelive
+    email: Magelive.jx@foxmail.com
+    github: your-github
+    weibo: your-weibo
+    avatar:
+blog:
+    recentSize: 5
+    pageSize: 6
+    pageBarSize: 5
+    allBlogsForPage: false
+text:
+    title: 介绍
+    intro: >
+          本博客使用Gitblog搭建，欢迎你!
