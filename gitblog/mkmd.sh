@@ -33,7 +33,10 @@ while [ -n $1 ]
 do
 	case "$1" in
 		-f|--file) 
-			file=$2;shift 2;;
+			file=$2;
+			title=`basename $file`;
+			title=${title%.*};
+			shift 2;;
 		-a|--author) 
 			author=$2;shift 2;;
 		-d|--date)
