@@ -103,7 +103,7 @@ docker build -t gitblog .
 
 mf=`readlink -f $MDfile_dir`
 
-docker run -p $port:80 -v $mf:/var/www/gitblog/blog/myblog -d gitblog /start.sh
+docker run -p $port:80 -v $mf:/var/www/gitblog/blog/markdown -d gitblog /start.sh
 
 rm ./default ./Dockerfile ./start.sh
 
