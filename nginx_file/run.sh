@@ -53,6 +53,7 @@ echo "	root /var/www/file;" >> ./default
 echo "	index index.html index.htm index.nginx-debian.html;" >> ./default
 echo "	location / {" >> ./default
 echo "        autoindex on;" >> ./default
+echo "        sendfile on;" >> ./default
 echo "        autoindex_exact_size on;" >> ./default
 echo "        autoindex_localtime on;" >> ./default
 echo "	}" >> ./default
