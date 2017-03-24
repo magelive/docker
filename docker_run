@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+name=$1
+port=$2
+file=$3
+node=`basename $file`
+
+docker run --name $name -p $port:22 -v $file:/var/$node -h $name -d ubuntu_dev /usr/sbin/sshd -D

@@ -19,7 +19,14 @@ ENV LC_ALL zh_CN.UTF-8
 
 #install soft
 RUN apt-get install -y vim openssh-server ctags tmux git make pkg-config gdb strace man automake libtool
-RUN apt-get install -y psmisc tree iputils-ping libnet-ifconfig-wrapper-perl
+RUN apt-get install -y psmisc tree iputils-ping libnet-ifconfig-wrapper-perl tig
+
+#config sshd and root passwd
+RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config 
+RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
+RUN echo "root:123456" | chpasswd
+
+RUN mkdir /var/run/sshd
 
 #set soft config
 ADD ./vimrc.local /etc/vim/vimrc.local
@@ -29,4 +36,7 @@ ADD ./tmux.conf /root/.tmux.conf
 ADD ./vim_plugin/plugin/*.vim /usr/share/vim/vim74/plugin/ 
 ADD ./vim_plugin/autoload/*.vim /usr/share/vim/vim74/autoload/
 
+EXPOSE 22
+
+CMD ["/usr/sbin/sshd -D"]
 
