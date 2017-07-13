@@ -56,6 +56,8 @@ echo "        autoindex on;" >> ./default
 echo "        sendfile on;" >> ./default
 echo "        autoindex_exact_size on;" >> ./default
 echo "        autoindex_localtime on;" >> ./default
+echo "        dav_methods PUT;" >> ./default
+echo "        dav_access user:rw group:rw all:r;" >> ./default
 echo "	}" >> ./default
 echo "}" >> ./default
 
