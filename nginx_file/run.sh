@@ -25,7 +25,7 @@ do
 done
 
 #build Dockerfile
-echo "FROM ubuntu:16.04" > ./Dockerfile
+echo "FROM ubuntu" > ./Dockerfile
 
 echo "RUN apt-get update" >> ./Dockerfile
 echo "RUN apt-get install -y nginx" >> ./Dockerfile
@@ -68,5 +68,5 @@ mf=`readlink -f $file`
 
 docker run -p $port:80 -v $file:/var/www/file -d file_server /start.sh
 
-rm ./default ./Dockerfile ./start.sh
+#rm ./default ./Dockerfile ./start.sh
 

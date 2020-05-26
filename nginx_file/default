@@ -1,0 +1,15 @@
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+    client_max_body_size 4G;
+	root /var/www/file;
+	index index.html index.htm index.nginx-debian.html;
+	location / {
+        autoindex on;
+        sendfile on;
+        autoindex_exact_size on;
+        autoindex_localtime on;
+        dav_methods PUT;
+        dav_access user:rw group:rw all:r;
+	}
+}
