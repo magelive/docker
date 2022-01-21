@@ -22,7 +22,7 @@ RUN apt-get install -y vim openssh-server ctags tmux git make pkg-config gdb str
 RUN apt-get install -y psmisc tree iputils-ping libnet-ifconfig-wrapper-perl tig
 
 #config sshd and root passwd
-RUN sed -ri 's/^PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config 
+RUN sed -ri 's/^#PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config 
 RUN sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 RUN echo "root:123456" | chpasswd
 
